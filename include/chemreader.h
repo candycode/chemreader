@@ -69,9 +69,9 @@ struct AtomicOrbitalShell {
     int atomid;
 };
 
-enum MolecularOrbitalType {
-	MO_SIGMA, MO_PI, MO_UNKNOWN
-};
+// enum MolecularOrbitalType {
+// 	MO_SIGMA, MO_PI, MO_UNKNOWN
+// };
 
 enum SpinType {
     SPIN_ALPHA,
@@ -80,7 +80,7 @@ enum SpinType {
 };
 
 struct MolecularOrbital {
-    MolecularOrbitalType type; //MO_SIGMA, MO_PI, MO_UNKNOWN
+    //MolecularOrbitalType type; //MO_SIGMA, MO_PI, MO_UNKNOWN
     String name;    
     real_t energy;
     SpinType spin;
@@ -91,25 +91,26 @@ struct MolecularOrbital {
 struct Bond {
     int atomId1;
     int atomId2;
-    String type;
-    String text;
-    int multiplicity;
 };
 
+typedef std::vector< int > AtomElements;
+typedef std::vector< String > AtomNames;
 // single time/optimization step data
 struct DataFrame {
 	String dataFormat; //molden, gaussian09 ...
 	String source; //file 
 	///@todo add support of per-atom scalar values
-	std::vector< int > atomElements;
-	std::vector< String > atomNames;
+	AtomElements atomElements;
+	AtomNames atomNames;
 	UnitOfLength unit; //AU or Angstrom
 	std::vector< Point3D > atomCoord;
-	std::vector< Bond > bonds;
+	std::vector< Bond > bonds; // only read 
 	std::vector< AtomicOrbitalShell > atomicOrbitalShell;
 	std::vector< MolecularOrbital > molecularOrbitals;
 };
 
+// used to support multi-step formats e.g. animation
+// and optimization steps
 template < typename SequenceT >
 struct DataSet {
     std::map< SequenceT, DataFrame > data; 
