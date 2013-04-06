@@ -15,17 +15,21 @@ Support for the following data formats will be available as well:
 
 The project is dependent on Parsley a C++ parsing framework supporting context-sensitive processing.
 
-Parsed and computed data include:
+Parsed data include:
 
 * unit cell
 * affine transform
 * atom name, element type and coordinates
 * atomic orbitals as GTO or STO basis sets
 * molecular obitals as LCAO
-* density and spin matrix(computed by the library if required)
+* density and spin matrix
 * electrostatic potential
 * vibrational modes
 * scalar fields
+
+Note that no computation is going to be performed by the library: bonds, density matrix and scalar fields are read
+from file if available.
+
 
 Minimal support for biochemical data will be available as well:
 
