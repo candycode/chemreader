@@ -6,7 +6,7 @@ Library for importing chemical data; focus is on electronic structure and the fo
 * Molden
 * Gaussian logs and cube
 * GAMESS
-* ADF
+* ADF t41  
 
 Support for the following data formats will be available as well:
 
