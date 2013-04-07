@@ -107,6 +107,7 @@ struct DataFrame {
 	std::vector< Bond > bonds; // only read 
 	std::vector< AtomicOrbitalShell > atomicOrbitalShells;
 	std::vector< MolecularOrbital > molecularOrbitals;
+	std::vector< real_t > vibrationFreq;
 	std::vector< Vec3D > vibrationCoord;
 };
 

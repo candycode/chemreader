@@ -32,7 +32,7 @@ enum { START,
                MOL_ORBITAL_ENE,
                MOL_ORBITAL_SPIN,
                MOL_ORBITAL_OCC,
-               MOL_ORBITAL_COEFFS   
+               MOL_ORBITAL_COEFFS,
        INVALID_STATE };
 
 ///Shared state
@@ -84,7 +84,7 @@ struct AtomGTOCBack : DefaultCBack {
 struct AddGTOAtomOrbitalCBack : DefaultCBack {
     AddGTOAtomOrbitalCBack( State* s ) : DefaultCBack( s ) {}
     void Apply( const Values& v, StateID prev, StateID cur ) {
-    	state_->curAtomicOrbitalShell = v[ "num" ];
+    	state_->curAtomicOrbitalShell =  v[ "num" ];
         DefaultCBack::Apply( v, prev, cur );
     }
     AddGTOAtomOrbitalCBack* Clone() const { 
