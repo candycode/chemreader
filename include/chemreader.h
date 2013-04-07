@@ -38,7 +38,7 @@ namespace chr {
 typedef real_t double;
 typedef std::string String
 
-struct Point3D {
+struct Vec3D {
     real_t x, y, z;
 };
 
@@ -103,10 +103,11 @@ struct DataFrame {
 	AtomElements atomElements;
 	AtomNames atomNames;
 	UnitOfLength unit; //AU or Angstrom
-	std::vector< Point3D > atomCoord;
+	std::vector< Vec3D > atomCoord;
 	std::vector< Bond > bonds; // only read 
-	std::vector< AtomicOrbitalShell > atomicOrbitalShell;
+	std::vector< AtomicOrbitalShell > atomicOrbitalShells;
 	std::vector< MolecularOrbital > molecularOrbitals;
+	std::vector< Vec3D > vibrationCoord;
 };
 
 // used to support multi-step formats e.g. animation
