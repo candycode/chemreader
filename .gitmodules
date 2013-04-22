@@ -3,4 +3,4 @@
 	url = git@github.com:/candycode/parsley.git
 [submodule "parsley"]
 	path = parsley
-	url = https://github.com/candycode/parsley.git
+	url = git@github.com:candycode/parsley.git
