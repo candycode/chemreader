@@ -52,7 +52,7 @@ enum AtomicOrbitalType {
 };
 
 enum BasisFunctionType {
-	GUSSIAN,
+	GAUSSIAN,
 	SLATER
 };
 
